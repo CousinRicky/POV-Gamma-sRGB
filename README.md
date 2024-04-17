@@ -14,7 +14,7 @@ However, confusion often arises over the use of these keywords.
 
 ## How to Use the sRGB Keywords
 
-The first thing to remember is that POV-Ray has **one** and only **one** color format. The `srgb` keyword does not create a different kind of color than the `rgb` keyword; it simply interprets its argument differently. If you `#declare` a color, the resulting variable has no memory of which keyword was used to declare it.
+The first thing to remember is that POV-Ray has **one** and only **one** color format. The `srgb` keyword does not create a different kind of color than the `rgb` keyword; it simply interprets its argument differently. When you `#declare` a color, the resulting variable has no memory of which keyword was used to declare it.
 
 The second thing to remember is that the keywords in the sRGB series decode from sRGB to linear, not the other way around!
 
@@ -70,7 +70,7 @@ Example 2: an orange light. Since this example doesn’t use a byte triplet, ste
 
 ---
 
-<sup>1</sup> Technically, these keywords convert an sRGB-specified color to match whatever `assumed_gamma` you are using. Using `assumed_gamma 1` means they will convert to linear.
+<sup>1</sup> Technically, these keywords convert an sRGB-specified color to match whatever assumed_gamma you are using. Using `assumed_gamma 1` means they will convert to linear.
 
 ---
 
