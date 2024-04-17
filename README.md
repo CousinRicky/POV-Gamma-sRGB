@@ -6,7 +6,7 @@ What is gamma, why should assumed_gamma be set to 1, and how should we use the s
 
 In the real world, a 1,600 lumen lamp emits twice as much light as an 800 lumen lamp, and a 40% gray object reflects half as much light as an 80% gray object. To render this reality, POV-Ray must use linear color. Setting `global_settings { assumed_gamma 1 }` accomplishes this goal, and has been the recommended setting since POV-Ray 3.7.
 
-The problem is that our perceptions are non-linear, and our monitors and software often reflect that non-linearity. Gamma is the measure of this non-linearity. Typically, RGB colors are specified with the non-linear sRGB standard, so in order for them to look correct with assumed_gamma 1, they must be decoded to a linear format. This is what the sRGB series of keywords (`srgb`, `srgbf`, `srgbt`, and `srgbft`) does^1.
+The problem is that our perceptions are non-linear, and our monitors and software often reflect that non-linearity. Gamma is the measure of this non-linearity. Typically, RGB colors are specified with the non-linear sRGB standard, so in order for them to look correct with assumed_gamma 1, they must be decoded to a linear format. This is what the sRGB series of keywords (`srgb`, `srgbf`, `srgbt`, and `srgbft`) does.<sup>1</sup>
 
 In addition, many scene files written prior to POV-Ray 3.7 failed to specify an assumed_gamma, so the resulting image defaulted to whatever gamma was used by the computer—usually 2.2, which is similar to sRGB. When rendered with POV-Ray 3.7, these scenes look pale and washed out. The quick fix is to specify `global_settings { assumed_gamma 2.2 }`, but if you wish to put in the work to make the scene physically realistic, the new keywords can help.
 
@@ -70,7 +70,7 @@ Example 2: an orange light. Since this example doesn’t use a byte triplet, ste
 
 ---
 
-^1 Technically, these keywords convert an sRGB-specified color to match whatever `assumed_gamma` you are using. Using `assumed_gamma 1` means they will convert to linear.
+<sup>1</sup> Technically, these keywords convert an sRGB-specified color to match whatever `assumed_gamma` you are using. Using `assumed_gamma 1` means they will convert to linear.
 
 ---
 
