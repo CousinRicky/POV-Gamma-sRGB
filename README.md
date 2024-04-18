@@ -1,4 +1,4 @@
-# Gamma and the sRGB Keywords in POV-Ray: a Tutorial
+# Gamma and the sRGB Keywords in POV-Ray 3.7: a Tutorial
 
 ## The Issue
 
@@ -60,6 +60,10 @@ Example 2: an orange light. Since this example doesn’t use a byte triplet, ste
       fade_power 2
       fade_distance Fd
     }
+
+## Epilogue
+
+Linear color applies only to the tracing phase. The output command line options `Display_Gamma` and `File_Gamma` should remain at their default `sRGB` setting. The `gamma` option for image maps should normally be left unspecified.
 
 ## Resources
 
